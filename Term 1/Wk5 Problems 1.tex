@@ -1,0 +1,66 @@
+\documentclass{article}
+
+% Packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm, bm, bbm} 
+\usepackage{enumerate, graphicx, xcolor, tcolorbox, hyphenat, circledsteps}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url, hyperref}
+\hypersetup{
+	colorlinks   = true,
+	urlcolor     = cyan,
+	linkcolor    = red,
+	citecolor    = black
+}
+
+% Formatting
+\usepackage[a4paper, noheadfoot, scale={0.7,0.8}]{geometry}
+\title{Wk 5 Supervision Problems 1}
+\author{Luca Bollini}
+\date{03 November 2026}
+\hyphenpenalty=10000
+
+% Commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddt}[1]{\frac{d}{d#1}}
+\newcommand{\ddttwo}[1]{\frac{d^2}{d#1^2}}
+\newcommand{\ts}{\thinspace}
+
+% Colours
+\newtcolorbox{questionbox}{
+	colframe=black, 
+	colback=white, 
+	boxrule=0.2mm,
+	arc=0mm,
+}
+
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\huge{\textbf{Permutations}}
+\end{center}
+
+\begin{enumerate}
+    \item Find the inverse of the following permutations and write your answer as a product of disjoint cycles.
+    \begin{enumerate}[(i)]
+        \item (1~2~4)(3~5~7~6)
+        \item (1~2)(2~4~3)(2~3~5)
+    \end{enumerate}
+    \item Find all possible orders of elements in $S_7$. How many elements are there with order $2$?
+    \item Let $\sigma$ be a $k$-cycle. If $m$ is a positive integer, prove that $\sigma^m$ is a $k$-cycle if and only if $k$ and $m$ are coprime.
+\end{enumerate}
+
+\begin{center}
+\huge{\textbf{Applying Lagrange's Theorem}}
+\end{center}
+
+\begin{enumerate}
+    \item Show that every group of order $55$ contains an element of order $5$ and an element of order $11$.
+    \item Let $G$ be a (possibly infinite) group with subgroups $H$ and $K$ such that $K$ is also a subgroup of $H$. Suppose that $[G : H]=m$ and $[H : K]=n$. Show that $[G : K]=mn$.
+\end{enumerate}
+
+\end{document}

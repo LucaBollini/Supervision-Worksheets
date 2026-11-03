@@ -1,0 +1,76 @@
+\documentclass{article}
+
+% Packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm, bm, bbm} 
+\usepackage{enumerate, graphicx, xcolor, tcolorbox, hyphenat, circledsteps}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url, hyperref}
+\hypersetup{
+	colorlinks   = true,
+	urlcolor     = cyan,
+	linkcolor    = red,
+	citecolor    = black
+}
+
+% Formatting
+\usepackage[a4paper, noheadfoot, scale={0.7,0.8}]{geometry}
+\title{Wk 2 Supervision Problems 1}
+\author{Luca Bollini}
+\date{13 October 2026}
+\hyphenpenalty=10000
+
+% Commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddt}[1]{\frac{d}{d#1}}
+\newcommand{\ddttwo}[1]{\frac{d^2}{d#1^2}}
+\newcommand{\ts}{\thinspace}
+
+% Colours
+\newtcolorbox{questionbox}{
+	colframe=black, 
+	colback=white, 
+	boxrule=0.2mm,
+	arc=0mm,
+}
+
+
+\begin{document}
+\maketitle
+
+% LESSON PLAN: Split the group in two and have half of them work on problem A on the left side of the blackboard, while the others work on problem B on the right side of the blackboard.
+
+% NOTE: This is meant to be an exercise in deciphering word problems and turning them into maths, similar to the first modelling assignment.
+
+\begin{center}
+\huge{\textbf{A}} 
+\end{center}
+
+Newton's law of cooling states that the rate an object cools is proportional to the temperature difference between the object and its surroundings.
+A $90^\circ$C cup of coffee is placed in a room maintained at $20^\circ$C. After 10 minutes, the coffee has cooled to $70^\circ$C.
+
+\begin{enumerate}
+    \item Set up and solve an initial value problem for the temperature, $T(t)$, of the coffee using Newton's law of cooling.
+    \item Find the time at which the coffee reaches $40^\circ$C.
+\end{enumerate}
+
+\vspace{5pt}
+
+\begin{center}
+\huge{\textbf{B}}
+\end{center}
+
+The displacement of a mass on a spring can be described by Newton's second law as follows:
+\[
+m\ddttwo{t}x(t) + c\ddt{t}x(t) + kx(t) = 0
+\]
+where $m$ is the mass, $c$ is the damping constant, and $k$ is the spring constant.
+A mass of $1$ kg is attached to a spring with constant $k=13$ N/m. The system experiences damping with coefficient $c=4$ Ns/m. At $t=0$ the mass is displaced $0.5$ m from equilibrium and released from rest.
+
+\begin{enumerate}
+    \item Write down the initial value problem governing the displacement of the mass, $x(t)$, and find the complimentary function.
+    \item Solve the problem completely and determine the long-time behaviour of the system.
+\end{enumerate}
+\end{document}

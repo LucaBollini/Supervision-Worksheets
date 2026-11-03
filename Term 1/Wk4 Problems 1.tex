@@ -1,0 +1,74 @@
+\documentclass{article}
+
+% Packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm, bm, bbm} 
+\usepackage{enumerate, graphicx, xcolor, tcolorbox, hyphenat, circledsteps}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url, hyperref}
+\hypersetup{
+	colorlinks   = true,
+	urlcolor     = cyan,
+	linkcolor    = red,
+	citecolor    = black
+}
+
+% Formatting
+\usepackage[a4paper, noheadfoot, scale={0.7,0.8}]{geometry}
+\title{Wk 4 Supervision Problems 1}
+\author{Luca Bollini}
+\date{27 October 2026}
+\hyphenpenalty=10000
+
+% Commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddt}[1]{\frac{d}{d#1}}
+\newcommand{\ddttwo}[1]{\frac{d^2}{d#1^2}}
+\newcommand{\ts}{\thinspace}
+
+% Colours
+\newtcolorbox{questionbox}{
+	colframe=black, 
+	colback=white, 
+	boxrule=0.2mm,
+	arc=0mm,
+}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\huge{\textbf{Functions}}
+\end{center}
+
+\begin{enumerate}
+    \item If $A$ is a set with two elements, and $B$ is a set with three elements, how many injective, surjective, and bijective functions are there from $A$ to $B$? How many of each from $B$ to $A$?
+    \item Let $f:X\to Y$ be an injective function. Use $f$ to construct an injective function $F:~\mathcal{P}(X) \to \mathcal{P}(Y)$ ($\mathcal{P}$ denotes the power set), justifying why your function is injective.
+    \item Let $f:X\to Y$ be a surjective function. Write down a set $X' \subset X$ such that $f|_{X'}$ is bijective. \textit{(You may assume the axiom of choice)}
+\end{enumerate}
+\begin{questionbox}
+    \underline{Axiom of Choice reminder:}\\
+    For an arbitrary collection of non-empty sets $\{X_i\}_{i \in I}$, it is possible to select exactly one element from each set as a representative. That is, there exists $\{x_i\}_{i\in I}$ such that $x_i \in X_i$.
+\end{questionbox}
+
+\begin{center}
+\huge{\textbf{Fixed Points of Difference Equations}}
+\end{center}
+
+\begin{enumerate}
+    \item Consider the difference equation
+    \[
+    x_{n+1} = \lambda x_n - x_n^3,
+    \]
+    where $\lambda$ is a non-negative parameter.
+    Find the fixed points of this equation and determine their stability for different values of $\lambda$.
+    \item Let $f: \R\to\R$ be a continuous function, and consider the difference equation
+    \[
+    x_{n+1} = f(x_n)
+    \]
+    Prove (informally) that if this equation has a 2-cycle with the values $a$ and $b$, then there exists a fixed point $x^* \in (a,b)$.
+\end{enumerate}
+
+\end{document}

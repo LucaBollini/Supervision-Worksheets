@@ -1,0 +1,104 @@
+\documentclass{article}
+
+% Packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm, bm, bbm} 
+\usepackage{enumerate, graphicx, xcolor, tcolorbox, hyphenat, circledsteps}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url, hyperref}
+\hypersetup{
+	colorlinks   = true,
+	urlcolor     = cyan,
+	linkcolor    = red,
+	citecolor    = black
+}
+
+% Formatting
+\usepackage[a4paper, noheadfoot, scale={0.7,0.8}]{geometry}
+\title{Wk 2 Supervision Problems 2}
+\author{Luca Bollini}
+\date{16 October 2026}
+\hyphenpenalty=10000
+
+% Commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddt}[1]{\frac{d}{d#1}}
+\newcommand{\ddttwo}[1]{\frac{d^2}{d#1^2}}
+\newcommand{\ts}{\thinspace}
+
+% Colours
+\newtcolorbox{questionbox}{
+	colframe=black, 
+	colback=white, 
+	boxrule=0.2mm,
+	arc=0mm,
+}
+
+% Load the censor package
+\usepackage{censor}
+
+% Configure censor to use a white box instead of black bars
+\def\censorcolor{white}
+\let\svcensorrule\censorrule
+\renewcommand\censorrule[1]{%
+\textcolor{\censorcolor}{\svcensorrule{#1}}} % White box
+\renewcommand{\censorruleheight}{1.5ex} % Height of the box
+
+\newcommand{\whitebox}[1]{\fbox{\censor{#1}}} % Custom censoring
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\huge{\textbf{Set Operations}} 
+\end{center}
+
+\begin{enumerate}
+    \item Let $A$ a set. We define the \emph{complement} of $A$, denoted $A'$, to be the set of all elements $x \notin A$.
+    Prove the identities
+    \begin{gather*}
+        (A \cup B)' = A' \cap B',\\
+        (A \cap B)' = A' \cup B'.
+    \end{gather*}
+    \item Use the above to help you simplify the following expressions.
+    \begin{enumerate}[(i)]
+        \item $((A \cup B) \cap (C \cup D))'$
+        \item $A \cap (B \cap C')'$
+        \item $(A \cap (B' \cup (C\cap D)'))'$
+    \end{enumerate}
+\end{enumerate}
+
+
+\begin{center}
+\huge{\textbf{Analysis}}
+\end{center}
+
+\begin{enumerate}
+    \item Let $a,b\in\R$ be real numbers such that $|a|, |b| \geq k > 0$. Show that
+    \[
+    \left|\frac{1}{a}-\frac{1}{b}\right| \leq \frac{|a-b|}{k^2}
+    \]
+    
+    \item Here is an answer to Q6 on the analysis exercises (proving the Greatest Lower Bound Property), but with some key details missing. Work through the proof yourself to fill in the gaps.
+
+    % IMPORTANT NOTE: This exercise is very frustrating for students in its current form. It would be worth changing the blanks to cover only specific details to be filled in, rather than half the proof.
+
+    % ALSO NOTE: This exercise is meant to demonstrate the process of writing a proof with good clarity.
+
+    \begin{questionbox}
+    First note that if \whitebox{$l$ is an upper bound} for a set $A$, then \whitebox{$-l$ is a lower bound} for the set $-A$.
+    
+    Suppose $S$ is \whitebox{a non-empty set} that is bounded below. Let \whitebox{$m$ be any lower bound} for $S$.
+    Then $-S$ is \whitebox{a non-empty set} which is \whitebox{bounded above by $-m$}.
+
+    By the \whitebox{least upper bound} axiom, $-S$ has a \whitebox{least upper bound}, \whitebox{$l$}.
+
+    It follows that \whitebox{$-l$ is a lower bound} for $S$. Furthermore, because \whitebox{$l\leq -m$ we have $-l\geq m$}, and since \whitebox{$m$} was arbitrary, we conclude that \whitebox{$-l$ is the greatest lower bound} for $S$.
+    \end{questionbox}
+    
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,89 @@
+\documentclass{article}
+
+% Packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm, bm, bbm} 
+\usepackage{enumerate, graphicx, xcolor, tcolorbox, hyphenat, circledsteps}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url, hyperref}
+\hypersetup{
+	colorlinks   = true,
+	urlcolor     = cyan,
+	linkcolor    = red,
+	citecolor    = black
+}
+
+% Formatting
+\usepackage[a4paper, noheadfoot, scale={0.7,0.8}]{geometry}
+\title{Wk 3 Supervision Problems 2}
+\author{Luca Bollini}
+\date{23 October 2026}
+\hyphenpenalty=10000
+
+% Commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddt}[1]{\frac{d}{d#1}}
+\newcommand{\ddttwo}[1]{\frac{d^2}{d#1^2}}
+\newcommand{\ts}{\thinspace}
+
+% Colours
+\newtcolorbox{questionbox}{
+	colframe=black, 
+	colback=white, 
+	boxrule=0.2mm,
+	arc=0mm,
+}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\huge{\textbf{Difference Equations}}
+\end{center}
+
+\begin{enumerate}
+
+    % NOTE: They have probably already done the first one in lectures, in which case, skip.
+    
+    \item Find the n\textsuperscript{th} term of the Fibonacci sequence.
+    \item Let us assume that
+    \[
+    \frac{2x+7}{x^2+5x+6}
+    \]
+    can be written as an expansion in ascending powers of $x$ in the form $a_0 + a_1x +a_2x^2 + \dots$.
+    Prove that for $n\geq 2$
+    \[
+    a_n + 5a_{n+1} + 6a_{n+2} = 0
+    \]
+    and solve the difference equation.
+    \item A plant is such that one year after being planted as a seed, it produces 21 new seeds, and each year thereafter produces 44 new seeds. Assume that as soon as a new seed is produced it is immediately planted. Taking $u_n$ to be the number of seeds produced in the n\textsuperscript{th} year, explain why
+    \[
+    u_{n+1} = 21u_{n} + 44(u_0 + u_1 + \dots +u_{n-1}).
+    \]
+    Hence show that
+    \[
+    u_{n+2} - 22u_{n+1} - 23u_n = 0
+    \]
+    and solve the difference equation.
+\end{enumerate}
+
+
+\begin{center}
+\huge{\textbf{Null Sequences}}
+\end{center}
+
+\begin{enumerate}
+    \item Prove that $|a_n| \to\infty$ if and only if $\frac{1}{a_n}\to0$.
+    \item Prove that the sequence
+    \[
+    b_n =\frac{n}{n^2+1}
+    \]
+    is a null sequence.
+
+    % NOTE: This question is intended to teach students to be crude with inequalities instead of wasting time solving a quadratic.
+    
+\end{enumerate}
+
+\end{document}
