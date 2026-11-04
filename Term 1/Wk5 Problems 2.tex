@@ -59,9 +59,19 @@ Solve the assignment problems from this old analysis workbook.
 \emph{Quick history lesson: In my year's analysis I module, we had workbooks we had to submit which contained \textbf{over 15 compulsory assignment problems every week!}}
 
 \begin{center}
-\huge{\textbf{Permutations}}
+\huge{\textbf{Induction}}
 \end{center}
 
-Prove that any subgroup of $S_n$ either contains only even permutations, or exactly half the elements are even permutations.
+Here is an induction proof that all horses are the same colour:
+
+\begin{questionbox}
+    Clearly, a group of one horse is a group in which all horses are the same colour. This constitutes the base case. 
+    
+    Now suppose that any group of $n$ horses are always the same colour, and consider a group of $n+1$ horses. We let this group of horses be $\{H_1,H_2,\dots,H_{n+1}\}$ and consider removing just one horse. $\{H_2,H_3,\dots,H_{n+1}\}$ is a group of $n$ horses, which must all be the same colour, and $\{H_1,H_2,\dots,H_{n}\}$ is a group of $n$ horses, which must all be the same colour, so it follows that every horse in $\{H_1,H_2,\dots,H_{n+1}\}$ are all the same colour. This completes the inductive step.
+
+    We conclude by induction that in any group of horses of any size, all horses are the same colour.
+\end{questionbox}
+
+Do you agree?
 
 \end{document}
