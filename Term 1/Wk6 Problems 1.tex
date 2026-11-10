@@ -1,0 +1,73 @@
+\documentclass{article}
+
+% Packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm, bm, bbm, comment} 
+\usepackage{enumerate, graphicx, xcolor, tcolorbox, hyphenat, circledsteps}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url, hyperref}
+\hypersetup{
+	colorlinks   = true,
+	urlcolor     = cyan,
+	linkcolor    = red,
+	citecolor    = black
+}
+
+% Formatting
+\usepackage[a4paper, noheadfoot, scale={0.7,0.8}]{geometry}
+\title{Wk 6 Supervision Problems 1}
+\author{Luca Bollini}
+\date{10 November 2026}
+\hyphenpenalty=10000
+
+% Commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ddt}[1]{\frac{d}{d#1}}
+\newcommand{\ddttwo}[1]{\frac{d^2}{d#1^2}}
+\newcommand{\ts}{\thinspace}
+
+% Colours
+\newtcolorbox{questionbox}{
+	colframe=black, 
+	colback=white, 
+	boxrule=0.2mm,
+	arc=0mm,
+}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\huge{\textbf{ODEs by Substitution}}
+\end{center}
+
+\begin{enumerate}
+    \item Using the substitution $z(x) = 1/y(x)$, find the general solution to
+    \[
+    xy' + y = y^2\log x.
+    \]
+    \item Using the substitution $z(x) = 1/y(x)^2$, solve
+    \[
+    y' + xy = y^3e^{x^2}
+    \]
+    subject to the initial condition $y=\frac{1}{2}$ when $x=0$.
+\end{enumerate}
+
+\begin{center}
+\huge{\textbf{Euclidean Algorithm}}
+\end{center}
+
+\begin{enumerate}
+    \item Find the greatest common factor (gcd) of $2244$ and $2145$
+    \item Find integers $x$ and $y$ such that
+    \[
+    119x + 34y = \gcd(119,34)
+    \]
+    \item An exhibit in an art gallery consists of square ceramic tiles in a $901$ by $629$ grid. A laser is directed across the exhibit, from the top left corner of the grid to the bottom right. Exactly how many tiles does the laser pass over?
+    % The answer is 901 + 629 - gcd = 1513
+\end{enumerate}
+
+\end{document}
