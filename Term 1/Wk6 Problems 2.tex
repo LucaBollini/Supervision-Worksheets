@@ -1,0 +1,66 @@
+\documentclass{article}
+
+% Packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm, bm, bbm, comment} 
+\usepackage{enumerate, graphicx, xcolor, tcolorbox, hyphenat, circledsteps}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url, hyperref}
+\hypersetup{
+	colorlinks   = true,
+	urlcolor     = cyan,
+	linkcolor    = red,
+	citecolor    = black
+}
+
+% Formatting
+\usepackage[a4paper, noheadfoot, scale={0.7,0.8}]{geometry}
+\title{Wk 6 Supervision Problems 2}
+\author{Luca Bollini}
+\date{12 November 2026}
+\hyphenpenalty=10000
+
+% Commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ddt}[1]{\frac{d}{d#1}}
+\newcommand{\ddttwo}[1]{\frac{d^2}{d#1^2}}
+\newcommand{\ts}{\thinspace}
+
+% Colours
+\newtcolorbox{questionbox}{
+	colframe=black, 
+	colback=white, 
+	boxrule=0.2mm,
+	arc=0mm,
+}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\huge{\textbf{Subsequences}}
+\end{center}
+
+\begin{enumerate}
+    \item Let $x_n$ and $y_n$ both be bounded sequences. Prove that there is a sequence of integers $n_k\to\infty$ such that $x_{n_k}$ and $y_{n_k}$ both converge.
+    \item Prove that $a_n$ is bounded if and only if every subsequence of $a_n$ has a convergent subsequence.
+    \item Let $x_n$ be a sequence of real numbers that lie in the interval $[0,1]$. Suppose that
+    \[
+    x_{n+1}-x_n\to 0 \quad \text{as}\quad n\to \infty,
+    \]
+    and any convergent subsequence of $x_n$ either converges to $0$ or $1$. Prove that the entire sequence converges.
+\end{enumerate}
+
+\begin{center}
+\huge{\textbf{Group Isomorphisms}}
+\end{center}
+
+\begin{enumerate}
+    \item Consider the groups $(\{2,4,6,8\}, \times)$ with multiplication modulo $10$, and $(\{1,3,5,7\}, \times)$ with multiplication modulo $8$. Are these two groups isomorphic?
+    \item For any group $G$, an isomorphism $\varphi:G\to G$ is called an \emph{automorphism}. Prove that the set of automorphisms on $G$ is itself a group with respect to function composition.
+\end{enumerate}
+
+\end{document}
