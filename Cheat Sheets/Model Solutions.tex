@@ -1,0 +1,100 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm, bm, bbm, comment} 
+\usepackage{enumerate, graphicx, xcolor, tcolorbox, hyphenat, circledsteps}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url, hyperref}
+\hypersetup{
+	colorlinks   = true,
+	urlcolor     = cyan,
+	linkcolor    = red,
+	citecolor    = black
+}
+
+% Formatting
+\usepackage[a4paper, noheadfoot, scale={0.8,0.82}]{geometry}
+\usepackage[T1]{fontenc}
+\newcommand{\thetitle}{Model Solutions}
+\newcommand{\theauthor}{Luca Bollini}
+\newcommand{\thedate}{November 2026}
+\hyphenpenalty=10000
+\parindent0pt
+
+% Commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ddt}[1]{\frac{d}{d#1}}
+\newcommand{\ddttwo}[1]{\frac{d^2}{d#1^2}}
+\newcommand{\ts}{\thinspace}
+
+% Colours
+\newtcolorbox{questionbox}{
+	colframe=black, 
+	colback=white, 
+	boxrule=0.2mm,
+	arc=0mm,
+}
+
+
+% Specific packages
+\usepackage{stmaryrd}
+\usepackage{tikz}
+
+\newcommand{\contradiction}{%
+\begin{tikzpicture}[rotate=45,x=0.5ex,y=0.5ex]
+\draw[line width=.2ex] (0,2) -- (3,2) (0,1) -- (3,1) (1,3) -- (1,0) (2,3) -- (2,0);
+\end{tikzpicture}
+}
+
+\begin{document}
+
+\framebox[16.8cm]{{\sc University of Warwick}\hfill{\sc Mathematics Institute}}
+
+\vspace{2mm}
+{\sc  \theauthor}\hfill{\sc \thedate}
+
+\vspace{3mm}
+
+\begin{center}
+{\large \textbf {\underline{\thetitle}}}
+\end{center}
+
+\vspace{3mm}
+
+1.i) from Week 7 Problems 1.
+
+\begin{questionbox}
+    Let $(s_n)$ and $(t_n)$ be sequences of real numbers, and suppose that $(s_n)$ converges. Does $(t_n)$ converge if there exists $0<r<1$ such that for all $n$ sufficiently large,
+    \[
+    |t_{n+1}-t_{n}| \leq r^n|s_{n+1}-s_n|\text{?}
+    \]
+\end{questionbox}
+
+First recall that a sequence of real numbers converges if and only if it is Cauchy. Using the Cauchy property of $(s_n)$, let $\eps>0$ and let $N\in\N$ be sufficiently large so that both
+\[
+|t_{n+1}-t_{n}| \leq r^n|s_{n+1}-s_n|
+\]
+and
+\[
+|s_{m}-s_n|<(1-r)\eps
+\]
+for all $m,n>N$. Now, by the triangle inequality, we have for any $m>n>N$ that
+\begin{align*}
+    |t_{m}-t_{n}| &\leq |t_{m}-t_{m-1}|+|t_{m-1}-t_{m-2}|+\cdots+|t_{n+1}-t_{n}|\\
+    &\leq r^{m-1}|s_{m}-s_{m-1}|+r^{m-2}|s_{m-1}-s_{m-2}|+\cdots+r^n|s_{n+1}-s_{n}|\\
+    &\leq (r^{m-1}+r^{m-2}+\cdots+r^n)(1-r)\eps.
+\end{align*}
+We now see that the right hand side is bounded by the tail of a geometric series, that is
+\begin{align*}
+    (r^{m-1}+r^{m-2}+\cdots+r^n)\leq r^n\sum_{k=0}^\infty r^k = r^n\frac{1}{1-r}\leq \frac{1}{1-r}.
+\end{align*}
+Consequently,
+\begin{align*}
+    |t_{m}-t_{n}| &\leq (r^{m-1}+r^{m-2}+\cdots+r^n)(1-r)\eps\leq \frac{1}{1-r}(1-r)\eps = \eps
+\end{align*}
+for any $m>n>N$. Since the assumption $m>n$ can be made without any loss of generality, it follows that $(t_n)$ is Cauchy, and therefore converges.
+\end{document}

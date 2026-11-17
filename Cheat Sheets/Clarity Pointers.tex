@@ -1,0 +1,107 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm, bm, bbm, comment} 
+\usepackage{enumerate, graphicx, xcolor, tcolorbox, hyphenat, circledsteps}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url, hyperref}
+\hypersetup{
+	colorlinks   = true,
+	urlcolor     = cyan,
+	linkcolor    = red,
+	citecolor    = black
+}
+
+% Formatting
+\usepackage[a4paper, noheadfoot, scale={0.8,0.82}]{geometry}
+\usepackage[T1]{fontenc}
+\newcommand{\thetitle}{Clarity Pointers}
+\newcommand{\theauthor}{Luca Bollini}
+\newcommand{\thedate}{November 2026}
+\hyphenpenalty=10000
+\parindent0pt
+
+% Commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ddt}[1]{\frac{d}{d#1}}
+\newcommand{\ddttwo}[1]{\frac{d^2}{d#1^2}}
+\newcommand{\ts}{\thinspace}
+
+% Colours
+\newtcolorbox{questionbox}{
+	colframe=black, 
+	colback=white, 
+	boxrule=0.2mm,
+	arc=0mm,
+}
+
+
+% Specific packages
+\usepackage{stmaryrd}
+\usepackage{tikz}
+
+\newcommand{\contradiction}{%
+\begin{tikzpicture}[rotate=45,x=0.5ex,y=0.5ex]
+\draw[line width=.2ex] (0,2) -- (3,2) (0,1) -- (3,1) (1,3) -- (1,0) (2,3) -- (2,0);
+\end{tikzpicture}
+}
+
+\begin{document}
+
+\framebox[16.8cm]{{\sc University of Warwick}\hfill{\sc Mathematics Institute}}
+
+\vspace{2mm}
+{\sc  \theauthor}\hfill{\sc \thedate}
+
+\vspace{3mm}
+
+\begin{center}
+{\large \textbf {\underline{\thetitle}}}
+\end{center}
+
+\vspace{3mm}
+
+\begin{enumerate}
+    \item \underline{Write in full sentences.} They do not have to be complicated or eloquent. In fact, short, simple sentences are usually best!
+
+    \item \underline{Use punctuation.} Your sentences should adhere to normal English grammar rules. That means: capital letter at the start, commas separating clauses, and a full stop at the end.    
+
+    \item \underline{Avoid shorthand.} Especially $\therefore$ in place of ``therefore'', $\because$ in place of ``because'', and contradiction symbols such as $\lightning$ and $\contradiction$ can be difficult to decipher. 
+    
+    Blackboard shorthand such as $\exists$ for ``there exists'' and $\forall$ for ``for all'' are acceptable in assignments and exams, but are inappropriate in professional writing.
+
+    \item \underline{Only use the ``implies'' symbol when you actually mean it!} The implies symbol is an ``if ... then ...'' statement. It should not be used to indicate the next line of a proof.
+
+    \item \underline{Introduce new notation.} Do not assume your reader knows that $f$ is a function and $\eps$ is a positive real number. Write ``Let $f:X\to Y$ be a function'' and ``Let $\eps>0$''.
+    
+    \item \underline{Be precise.} When you see a statement such as
+    \[
+    \text{``The sequence $(a_n)$ satisfies } |a_n - l|<\eps.\text{''}
+    \]
+    you should be asking yourself: ``What values can $a_n$ take? For which $n$ is this true? For which $\eps$? Is $l$ a real number or an integer?'' You should specify that ``$(a_n)$ is a sequence of real numbers'' and the above statement is true ``for any $n>N$''.
+
+    \item \underline{Check the order of mathematical clauses.} There is a stark difference between
+    \[
+    \text{``For any }N\in\Z,\text{ there exists }M\in\Z\text{ such that }M<N.\text{''}
+    \]
+    and
+    \[
+    \text{``There exists }M\in\Z\text{ such that }M<N, \text{ for any }N\in\Z.\text{''}
+    \]
+    One statement says you can always find a smaller integer, while the other says that there is a smallest integer!
+
+    \item \underline{Proof read.} It is very easy to accidentally get the order of two statements the wrong way round, or misplace punctuation in a way that changes the meaning of a sentence. Check that what you have written actually communicates what you were intending.
+\end{enumerate}
+    
+
+
+
+
+
+
+
+\end{document}

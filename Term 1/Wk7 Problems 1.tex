@@ -1,0 +1,99 @@
+\documentclass{article}
+
+% Packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm, bm, bbm, comment} 
+\usepackage{enumerate, graphicx, xcolor, tcolorbox, hyphenat, circledsteps}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url, hyperref}
+\hypersetup{
+	colorlinks   = true,
+	urlcolor     = cyan,
+	linkcolor    = red,
+	citecolor    = black
+}
+
+% Formatting
+\usepackage[a4paper, noheadfoot, scale={0.7,0.8}]{geometry}
+\title{Wk 7 Supervision Problems 1}
+\author{Luca Bollini}
+\date{17 November 2026}
+\hyphenpenalty=10000
+
+% Commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ddt}[1]{\frac{d}{d#1}}
+\newcommand{\ddttwo}[1]{\frac{d^2}{d#1^2}}
+\newcommand{\ts}{\thinspace}
+
+% Colours
+\newtcolorbox{questionbox}{
+	colframe=black, 
+	colback=white, 
+	boxrule=0.2mm,
+	arc=0mm,
+}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\huge{\textbf{Cauchy Sequences}}
+\end{center}
+
+\begin{comment}
+    Students struggled with the first question. Remind them that the Cauchy property is much stronger than just controlling the difference between consequtive terms, hence why the r^n factor is needed for part i).
+
+    Part i) is a good exercise in using the triangle inequality. Have them write up proper answers in sentences, and let them grade each other's work. Use this as a way of illustrating good clarity. 
+\end{comment}
+
+\begin{enumerate}
+    \item Let $(s_n)$ and $(t_n)$ be sequences of real numbers, and suppose that $(s_n)$ converges. Does $(t_n)$ converge if
+    \begin{enumerate}[(i)]
+        \item there exists $0<r<1$ such that for all $n$ sufficiently large,
+        \[
+        |t_{n+1}-t_{n}| \leq r^n|s_{n+1}-s_n|\text{?}
+        \]
+        \item for any $n\in\N$
+        \[
+        |t_{n+1}-t_{n}| \leq |s_{n+1}-s_n|\text{?}
+        \]
+        \item there exists $N\in\N$ such that for all $m,n>N$,
+        \[
+        |t_{n+m}-t_{n}| \leq |s_{n+m}-s_n|\text{?}
+        \]
+    \end{enumerate}
+
+    \item Define the sequence $(a_n)$ by
+    \[
+    a_n:= 1+\frac{1}{2!}+\frac{1}{3!}+\cdots+\frac{1}{n!}.
+    \]
+    Using the Cauchy property of sequences, prove that $(a_n)$ converges.
+\end{enumerate}
+
+\begin{center}
+\huge{\textbf{Nondimensionalisation}}
+\end{center}
+
+\begin{enumerate}
+    \item Consider the logistic equation
+    \[
+    \dot N = rN\left(1-\frac NK\right)
+    \]
+    subject to $N(0) = N_0$.
+    \begin{enumerate}[(i)]
+        \item Find the dimensions of the parameters $r,K$ and $N_0$, in terms of the dimensions of $N$.
+        \item Show the system can be rewritten with the dimensionless formula
+        \[
+        \frac{dx}{d\tau} = x(1-x),\quad x(0) = x_0
+        \]
+        for an appropriate choice of dimensionless variables $x,x_0$, and  $\tau$.
+        \item Find a different nondimensionalisation in terms of variables $u$ and $\tau$, chosen such that the initial condition is always $u_0=1$.
+        \item Can you think of any advantages of one nondimensionalisation over the other?
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
