@@ -37,6 +37,9 @@
 	arc=0mm,
 }
 
+% Specific packages
+\usepackage{stmaryrd}
+
 \begin{document}
 \maketitle
 
@@ -53,6 +56,49 @@
         \]
     \end{questionbox}
     Swap with the person next to you and grade the clarity of their solution.
+
+    \item A student is trying to prove that the alternating group $A_4$ has no subgroups of order 6. Their answer is given below. Identify at least 5 clarity errors, and fix them by redrafting their answer.
+
+    \begin{itshape}
+        \underline{Solution.}
+
+        Let $H\subset A_4$ and $|H|=6$. Lagrange $\implies [A_4:H]=2 \implies$ there are two cosets.
+        \[
+        \begin{aligned}
+            &hH=H\quad\forall h\in H\\
+            &gH=H'\quad\forall g\notin H \because 1_G\in H
+        \end{aligned}
+        \]
+        Since $1_G\notin H'\quad g^{-1}\notin H.\ \therefore\ \exists h\in H$ st
+        \[
+        \begin{aligned}
+            &gh= g^{-1}\\
+            &g^2=h^{-1}\in H\quad \forall g\in G.
+        \end{aligned}
+        \]
+        So $(a~b~c)^2\in H \implies \big((a~b~c)^2\big)^2=(a~b~c)\in H$. So $H$ contains at least $8$ elements $\lightning$.
+    \end{itshape}
+\end{enumerate}
+
+\begin{center}
+\huge{\textbf{Ordering}}
+\end{center}
+
+\begin{enumerate}
+    \item Define the relation $\preceq$ on the set of all real valued polynomials $\R[x]$ by
+    \[
+    P\preceq Q \iff P(x)\leq Q(x) \text{ for all } x\in[0,1].
+    \]
+    Prove that $(\R[x],\preceq)$ is a partially ordered set (poset).
+    \item Let
+    \[
+    A:= \{(m,n):m,n\in\N\text{ and }\gcd(m,n)=1\},
+    \]
+    and define the relation $\preceq$ on $A$ with
+    \[
+    (a,b)\preceq (c,d) \iff ad\leq bc.
+    \]
+    Prove that $(A,\preceq)$ is a totally ordered set.
 \end{enumerate}
 
 \end{document}
