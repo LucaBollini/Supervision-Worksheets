@@ -1,0 +1,89 @@
+\documentclass{article}
+
+% Packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm, bm, bbm, comment} 
+\usepackage{enumerate, graphicx, xcolor, tcolorbox, hyphenat, circledsteps}
+\usepackage[shortlabels]{enumitem}
+\usepackage{url, hyperref}
+\hypersetup{
+	colorlinks   = true,
+	urlcolor     = cyan,
+	linkcolor    = red,
+	citecolor    = black
+}
+
+% Formatting
+\usepackage[a4paper, noheadfoot, scale={0.7,0.8}]{geometry}
+\title{Wk 8 Supervision Problems 2}
+\author{Luca Bollini}
+\date{26 November 2026}
+\hyphenpenalty=10000
+
+% Commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ddt}[1]{\frac{d}{d#1}}
+\newcommand{\ddttwo}[1]{\frac{d^2}{d#1^2}}
+\newcommand{\ts}{\thinspace}
+
+% Colours
+\newtcolorbox{questionbox}{
+	colframe=black, 
+	colback=white, 
+	boxrule=0.2mm,
+	arc=0mm,
+}
+
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\huge{\textbf{Asymptotics for ODEs}}
+\end{center}
+
+\begin{enumerate}
+    \item The function $y(x)$ is the solution to the ODE
+    \[
+    x^2\frac{d^2y}{dx^2} + x\frac{dy}{dx} - (1-\eps x^2)y = 0
+    \]
+    subject to $y(0) = y_0<\infty$ and $y(1)=1+\eps^2$. The parameter $\eps$ is considered to be very small ($\eps<<1$). Using an asymptotic expansion of the form
+    \[
+    y(x) \sim y_0(x) + \eps y_1(x) + \eps^2 y_2(x) + \cdots
+    \]
+    as $\eps\to 0$, determine the first three terms in the expansion.
+
+    \item \emph{Warning: This problem is challenging!}
+    
+    Sometimes it is necessary to rescale an ODE to perform asymptotic analysis. Consider the ODE
+    \[
+    \eps\frac{d^2y}{dx^2} +\sqrt x \frac{dy}{dx} + y = 0
+    \]
+    subject to $y(0)=0$, $y(1)=1$, and where $\eps<<1$.
+    \begin{enumerate}[(i)]
+        \item By setting $\eps$ to 0, find the leading order solution which satisfies the boundary condition at $x=1$. Is your answer compatible with the boundary condition $y(0)=0$?
+
+        \emph{Don't panic, we can fix the discrepancy with a rescaling argument!}
+        
+        \item By comparing the magnitudes of $\eps y_0''(x)$, $\sqrt x y_0'(x)$ and $y(x)$ for small $x$, explain why the $\eps y''(x)$ term becomes important when $x=O(\eps^\frac23)$.
+
+        \item Rescale the ODE with $\xi = \eps^{-\frac{2}{3}}$, and hence determine the leading order inner solution $Y_0(\xi)$ which satisfies the boundary condition at $x=0$. (You solution will contain an unknown constant.)
+
+        \item We have now the first terms of two different asymptotic expansions for $y(x)$. The \emph{outer solution} $y_0(x)$ is valid for all $x$ larger than $O(\eps^\frac23)$, while the \emph{inner solution} $Y_0(\xi)$ covers the missing region for small $x$. It only remains to determine the unknown constant in $Y_0(\xi)$.
+
+        \underline{\emph{Van Dyke's matching rule}} roughly states that the two expansions agree upon swapping variables:
+        \[
+        y_0(\eps^\frac23 \xi) \sim Y_0(\eps^{-\frac23}x) \text{ as } \eps\to 0.
+        \]
+        Use this alongside the identity $\int_0^\infty \exp(-\frac23t^\frac32) \ts dt = (\frac23)^\frac13 \Gamma(\frac23)$ to find the missing constant in $Y_0(\xi)$ and show that
+        \[
+        \frac{dy}{dx}\bigg|_{x=0} \sim \frac{3^\frac13e^2\eps^{-\frac23}}{2^\frac13\Gamma(\frac23)}.
+        \]
+    \end{enumerate}
+\end{enumerate}
+
+
+\end{document}
